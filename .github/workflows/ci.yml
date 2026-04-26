@@ -15,13 +15,14 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        pip install selenium pytest
 
-    # 👇 THIS fixes browser issue
+    # 👇 Install Chrome + Driver properly
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
 
