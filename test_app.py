@@ -1,27 +1,18 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from selenium.webdriver.chrome.options import Options
+import os
 
 def test_title():
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
-    driver.get("file:///C:/Users/LAXMI SUNAGAR/Desktop/devops-project/index.html")
+    driver = webdriver.Chrome(options=options)
 
-    time.sleep(5)
-
-    # 👇 wait until alert appears
-    try:
-        wait = WebDriverWait(driver, 5)
-        alert = wait.until(EC.alert_is_present())
-
-        print("Alert found:", alert.text)
-        alert.accept()
-
-    except:
-        print("No alert found")
-
-    time.sleep(1)
+    # 👇 get correct path dynamically
+    file_path = os.path.abspath("index.html")
+    driver.get("file://" + file_path)
 
     assert "DevOps" in driver.page_source
 
