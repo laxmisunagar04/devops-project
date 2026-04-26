@@ -10,7 +10,6 @@ def test_title():
 
     driver = webdriver.Chrome(options=options)
 
-    # 👇 get correct path dynamically
     file_path = os.path.abspath("index.html")
     driver.get("file://" + file_path)
 
