@@ -1,4 +1,7 @@
-# 🚀 DevOps CI/CD Pipeline Project
+#![GitHub Actions](https://img.shields.io/github/actions/workflow/status/your-username/devops-project/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Status](https://img.shields.io/badge/CI-Passing-brightgreen) 🚀 DevOps CI/CD Pipeline Project
+
 
 ## 📌 Project Overview
 This project demonstrates a complete DevOps CI/CD pipeline using GitHub Actions, Selenium testing, and automated deployment concepts.
